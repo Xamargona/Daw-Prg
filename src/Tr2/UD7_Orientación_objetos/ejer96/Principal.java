@@ -4,6 +4,8 @@ import java.util.*;
 
 public class Principal {
     static final Scanner sc = new Scanner(System.in);
+    static ArrayList<Avion> lista_billetes = new ArrayList();
+
     public static void main(String[] args) {
 
         char x;
@@ -30,10 +32,10 @@ public class Principal {
         System.out.println("S-Salir");
         char opcion = sc.next().charAt(0);
         if (opcion != '1' ||
-                opcion != '2' ||
-                opcion != '3' ||
-                opcion != 's' ||
-                opcion != 'S') {
+            opcion != '2' ||
+            opcion != '3' ||
+            opcion != 's' ||
+            opcion != 'S') {
          opcion = seleccion_menu();
         }
         return opcion;
@@ -54,17 +56,14 @@ public class Principal {
             return;
         }else{
             dividir_cadena(info);
+
         }
     }
     public static void dividir_cadena(String cadena){
         String [] partes = cadena.split("@");
         String origen = partes[0];
-        partes = partes[1].split("@");
-        String destino = partes[0];
-        partes = partes[1].split("@");
-        int dia_ida = Integer.parseInt(partes[0]);
-        partes = partes[1].split("@");
-        int dia_vuelta = Integer.parseInt(partes[0]);
-
+        String destino = partes[1];
+        int dia_ida = Integer.parseInt(partes[2]);
+        int dia_vuelta = Integer.parseInt(partes[3]);
     }
 }
