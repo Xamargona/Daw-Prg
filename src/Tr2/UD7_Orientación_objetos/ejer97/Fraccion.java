@@ -30,11 +30,11 @@ public class Fraccion {
     }
 
     public Fraccion multiplicar(Fraccion f){
-        return new Fraccion(numerador = numerador*f.getNumerador(), denominador = denominador*f.getDenominador());
+        return new Fraccion(this.numerador*f.numerador, this.denominador*f.denominador);
     }
 
     public Fraccion dividir(Fraccion f){
-        return new Fraccion(numerador = numerador*f.getDenominador(), this.denominador = denominador*f.getNumerador());
+        return new Fraccion(this.numerador*f.denominador, this.denominador*f.numerador);
     }
 
 }
