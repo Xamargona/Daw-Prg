@@ -17,8 +17,9 @@ public class Principal {
                     break;
                 case '3': imprimir_lista();
                     break;
-                case 's': break;
-                case 'S': break;
+                case 's':
+                case 'S':
+                    break;
             }
 
         }while(Character.compare(x,'s') != 0 && Character.compare(x, 'S') != 0);
@@ -53,7 +54,6 @@ public class Principal {
         }
         if (contador != 3){
             System.out.println("ERROR, hemos detectado "+contador+" @ cuando deberia ser 4");
-            return;
         }else{
             dividir_cadena(info);
         }
@@ -80,7 +80,7 @@ public class Principal {
             entrada = sc.nextInt();
         }while(entrada < 0 || entrada > lista_billetes.size());
         sc.nextLine();
-        if(lista_billetes.get(entrada).getEstado() == true){
+        if(lista_billetes.get(entrada).getEstado()){
             System.out.println("Billete encontrado, ¿Confirma su cancelación(S/N)?");
             String respuesta = "";
             do {
@@ -88,10 +88,9 @@ public class Principal {
             }while(!respuesta.equalsIgnoreCase("s")&&!respuesta.equalsIgnoreCase("n"));
             if (respuesta.equalsIgnoreCase("s")){
                 lista_billetes.get(entrada).setEstado(false);
-                return;
+                System.out.println("Billete cancelado correctamente");
             }else{
                 System.out.println("Proceso de cancelación cancelado");
-                return;
             }
         }else{
             System.out.println("El billete ya se encuentra cancelado");
@@ -106,14 +105,14 @@ public class Principal {
         }while(!respuesta.equalsIgnoreCase("v")&&!respuesta.equalsIgnoreCase("c")&&!respuesta.equalsIgnoreCase("t"));
         if (respuesta.equalsIgnoreCase("v")) {
             for (int i = 1; i < lista_billetes.size(); i++) {
-                if (lista_billetes.get(i).getEstado() == true) {
+                if (lista_billetes.get(i).getEstado()) {
                     System.out.printf(i+":");
                     lista_billetes.get(i).muestra();
                 }
             }
         } else if (respuesta.equalsIgnoreCase("c")) {
             for (int i = 1; i < lista_billetes.size(); i++) {
-                if (lista_billetes.get(i).getEstado() == false) {
+                if (!lista_billetes.get(i).getEstado()) {
                     System.out.printf(i+":");
                     lista_billetes.get(i).muestra();
                 }
