@@ -1,4 +1,4 @@
-package Tr1.Actividades_Varias;
+package AceptaElReto;
 
 import java.util.Scanner;
 

@@ -33,6 +33,11 @@ public class Principal {
         System.out.println("4-Listado animales");
         System.out.println("5-Salir");
 
+        switch (opcion) {
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + opcion);
+        }
         try {
             opcion = sc.nextInt();
         }
