@@ -1,4 +1,4 @@
-package Tr2.AceptaElReto;
+package AceptaElReto;
 import  java.util.*;
 
 public class AE151 {

@@ -1,4 +1,4 @@
-package AceptaElReto;
+package AceptaElReto.AR532;
 import java.util.*;
 public class AR532 {
     public static void main(String[] args) {

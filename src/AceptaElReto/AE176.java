@@ -1,4 +1,4 @@
-package Tr2.AceptaElReto;
+package AceptaElReto;
 import java.util.*;
 public class AE176 {
     static final Scanner sc = new Scanner(System.in);
