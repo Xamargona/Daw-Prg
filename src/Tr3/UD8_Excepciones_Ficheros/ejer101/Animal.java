@@ -15,11 +15,19 @@ public class Animal {
         if (tipo) {
             return "tigre";
         } else {
-            return "leones";
+            return "leon";
         }
     }
 
     public void setPeso(int peso) {
         this.peso = peso;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getPeso() {
+        return peso;
     }
 }

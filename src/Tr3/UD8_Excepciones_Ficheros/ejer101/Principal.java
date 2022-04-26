@@ -138,15 +138,61 @@ public class Principal {
     }
 
     public static void baja_animal() {
-        System.out.println();
+        System.out.println("Introduzca el nombre del animal a dar de baja");
+        String buscar = sc.nextLine();
+        try {
+            boolean aux = false;
+            int  x = 0;
+            for (Animal animal: lista_animales ) {
+                if (animal.getNombre().equalsIgnoreCase(buscar)) {
+                    System.out.println("Dando de baja al animal "+animal.getNombre());
+                    aux = true;
+                    x = lista_animales.indexOf(animal);
+                }
+            }
+            if (aux) {
+                lista_animales.remove(x);
+            }
+            if (!aux) {
+                throw new Exception("Animal no encontado");
+            }
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void modificar_peso() {
-
+        System.out.println("Introduzca el nombre del animal a modificar el peso");
+        String buscar = sc.nextLine();
+        try {
+            boolean aux = false;
+            int  x = 0;
+            for (Animal animal: lista_animales ) {
+                if (animal.getNombre().equalsIgnoreCase(buscar)) {
+                    aux = true;
+                    x = lista_animales.indexOf(animal);
+                }
+            }
+            if (aux) {
+                System.out.println("Introduzca el peso del animal");
+                int z = sc.nextInt();
+                sc.nextLine();
+                lista_animales.get(x).setPeso(z);
+            }
+            if (!aux) {
+                throw new Exception("Animal no encontado");
+            }
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void mostrar_animales() {
-
+        for (Animal animal : lista_animales) {
+            System.out.println(animal.isTipo()+" "+animal.getNombre()+" "+animal.getPeso());
+        }
     }
 
 }
